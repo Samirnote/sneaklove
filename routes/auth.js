@@ -2,11 +2,11 @@ const express = require("express");
 const router = new express.Router();
 const bcrypt = require('bcrypt');
 const UserModel = require('../models/User');
+const flash = require('connect-flash');
 const salt =10;
 router.get('/signup', (req,res)=> res.render("signup"));
 
 router.post('/signup', async(req,res)=> {
-    console.log(req.params)
     try{
         const newUser = { ...req.body }; // clone req.body with spread operator
         console.log(newUser);

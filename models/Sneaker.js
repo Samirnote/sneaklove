@@ -2,13 +2,12 @@ const {model, Schema } = require('mongoose')
 
 const sneakerSchema = new Schema ({
     name: String,
-    ref: Boolean,
+    ref: String,
     size: String,
     description: String,
     price: Number,
     category: {type : String, enum:  ["men", "women", "kids"]},
-    id_tags: { type: Schema.Types.ObjectId, ref: "idTags" }
-
+    id_tags: { type: Schema.Types.ObjectId, ref:"Tag" }
     
 })
 
